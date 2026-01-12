@@ -1,28 +1,8 @@
 ---
-// Props like title from pages
-const { title } = Astro.props;
+import Layout from '../layouts/Layout.astro';
+import Links from '../components/Links.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
-    <meta name="theme-color" content="#007bff">
-    <meta name="description" content="Your links hub" />
-    <title>{title}</title>
-  </head>
-  <body>
-    <slot /> <!-- Your page content (e.g. <Links />) goes here -->
-  </body>
-</html>
-<style is:global>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-  }
-</style>
+
+<Layout title="Links Hub">
+  <Links />
+</Layout>
