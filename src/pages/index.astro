@@ -1,35 +1,70 @@
 ---
-// Define your custom links here as an array of objects
+// Same customLinks array
 const customLinks = [
-  { name: 'Mercari', url: 'https://www.mercari.com/u/effort/', icon: 'Mercari' },
-  { name: 'Solo.to', url: 'https://solo.to/dmt/', icon: 'Solo.to' },
-  { name: 'eBay', url: 'https://www.ebay.com/usr/decipher', icon: 'Ebay' },
-  { name: 'Instagram', url: 'https://www.instagram.com/fnaw', icon: 'Instagram' },
-  // Add more as needed
+  { name: 'Mercari', url: 'https://www.mercari.com/u/effort/', icon: 'cart' },
+  { name: 'Solo.to', url: 'https://solo.to/dmt/', icon: 'music' },
+  { name: 'eBay', url: 'https://www.ebay.com/usr/decipher', icon: 'store' },
+  { name: 'Instagram', url: 'https://www.instagram.com/fnaw', icon: 'instagram' },
 ];
 ---
 
-<ul class="links-list">
+<div class="links-container">
   {customLinks.map(link => (
-    <li>
-      <a href={link.url} target="_blank" rel="noopener noreferrer">
-        <!-- Use Iconify for icons; add script to your layout head if needed -->
-        <iconify-icon icon={`mdi:${link.icon}`}></iconify-icon>
-        {link.name}
-      </a>
-    </li>
+    <a href={link.url} target="_blank" rel="noopener noreferrer" class="link-btn" aria-label={`Visit ${link.name}`}>
+      <iconify-icon icon={`mdi:${link.icon}`} class="btn-icon"></iconify-icon>
+      <span>{link.name}</span>
+    </a>
   ))}
-</ul>
+</div>
 
 <style>
-  .links-list {
+  .links-container {
+    background: #000; /* Black background */
     display: flex;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    padding: 1.5rem;
   }
-  .links-list a {
-    color: #333;
+  .link-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 48px;
+    background: white;
+    color: #000; /* Black text */
     text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .link-btn:hover,
+  .link-btn:focus {
+    background: #f0f0f0; /* Light gray hover */
+    color: #000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+  }
+  .btn-icon {
+    font-size: 1.2rem;
+    width: 1.2em;
+    height: 1.2em;
+    color: #007bff; /* Blue icons for pop */
+  }
+  @media (max-width: 640px) {
+    .links-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .link-btn {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
   }
 </style>
