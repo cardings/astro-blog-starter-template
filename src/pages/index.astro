@@ -13,7 +13,7 @@ const customLinks = [
     {customLinks.map(link => (
       <a href={link.url} target="_blank" rel="noopener noreferrer" class="link-btn" aria-label={`Visit ${link.name}`}>
         <iconify-icon icon={`mdi:${link.icon}`} class="btn-icon"></iconify-icon>
-        <span>{link.name}</span>
+        <span class="btn-text">{link.name}</span>
       </a>
     ))}
   </div>
@@ -22,58 +22,65 @@ const customLinks = [
 <style>
   .screen-center {
     display: flex;
-    justify-content: center; /* Horizontal center */
-    align-items: center; /* Vertical center */
-    min-height: 100vh; /* Full screen height */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 2rem 1rem;
-    background: #f8f9fa; /* Light theme */
+    background: #f8f9fa;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Sleek modern font */
   }
   .links-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    gap: 1.25rem;
     justify-content: center;
-    max-width: 400px; /* Prevent over-wide on desktop */
   }
   .link-btn {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center contents horizontally */
     gap: 0.75rem;
-    padding: 1rem 1.75rem;
-    min-height: 60px;
+    padding: 1.25rem 2rem;
+    min-height: 70px;
     background: #f8f9fa;
     color: #333;
     text-decoration: none;
     border-radius: 12px;
     border: 2px solid #e0e0e0;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
+    font-family: inherit; /* Inherit sleek font */
     transition: all 0.2s ease;
-    white-space: nowrap;
+    flex: 1;
+    max-width: 160px;
   }
   .link-btn:hover,
   .link-btn:focus {
     background: #007bff;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,123,255,0.4);
+    box-shadow: 0 8px 20px rgba(0,123,255,0.4);
   }
   .btn-icon {
-    font-size: 1.5rem;
-    width: 1.5em;
-    height: 1.5em;
+    font-size: 1.75rem;
+    width: 1.75em;
+    height: 1.75em;
+    flex-shrink: 0; /* Prevent icon squash */
   }
-  @media (max-width: 640px) {
+  .btn-text {
+    text-align: center; /* Extra text centering */
+  }
+  @media (max-width: 768px) {
     .links-container {
-      flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
     }
     .link-btn {
-      width: 100%;
-      max-width: 320px;
-      justify-content: center;
-      font-size: 1.2rem;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      max-width: 140px;
+      min-height: 65px;
     }
   }
 </style>
+
 
