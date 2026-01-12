@@ -1,5 +1,5 @@
 ---
-// Same customLinks array
+// Same customLinks
 const customLinks = [
   { name: 'Mercari', url: 'https://www.mercari.com/u/effort/', icon: 'cart' },
   { name: 'Solo.to', url: 'https://solo.to/dmt/', icon: 'music' },
@@ -24,10 +24,12 @@ const customLinks = [
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
     padding: 2rem 1rem;
-    background: #1a2633; /* Navy blue dark theme */
+    /* No background - inherits page default */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
   }
   .links-container {
     display: flex;
@@ -42,40 +44,38 @@ const customLinks = [
     gap: 0.75rem;
     padding: 1.25rem 2rem;
     min-height: 70px;
-    background: #ffffff; /* White buttons */
-    color: #1a2633; /* Navy text */
+    background: #f8f9fa; /* Light button BG */
+    color: #333;
     text-decoration: none;
     border-radius: 12px;
-    border: 2px solid #e8f0fe; /* Light border */
+    border: 2px solid #e0e0e0;
     font-size: 1.25rem;
     font-weight: 600;
     font-family: inherit;
     transition: all 0.3s ease;
     flex: 1;
     max-width: 160px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
   .link-btn:hover,
   .link-btn:focus {
-    background: #f0f8ff; /* Light blue-white hover */
-    color: #1a2633;
+    background: #007bff;
+    color: white;
     transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(26, 38, 51, 0.4); /* Navy glow */
+    box-shadow: 0 12px 24px rgba(0,123,255,0.4);
   }
   .btn-icon {
     font-size: 1.75rem;
     width: 1.75em;
     height: 1.75em;
-    color: #1976d2; /* Blue accent */
+    color: #1976d2;
     flex-shrink: 0;
   }
   .btn-text {
     text-align: center;
   }
   @media (max-width: 768px) {
-    .links-container {
-      gap: 1rem;
-    }
+    .links-container { gap: 1rem; }
     .link-btn {
       padding: 1rem 1.5rem;
       font-size: 1.1rem;
