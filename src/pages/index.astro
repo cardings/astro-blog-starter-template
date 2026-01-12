@@ -19,51 +19,50 @@ const customLinks = [
 
 <style>
   .links-container {
-    background: #000; /* Black background */
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 1rem;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.5rem 0; /* Light theme revert */
   }
   .link-btn {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    min-height: 48px;
-    background: white;
-    color: #000; /* Black text */
+    gap: 0.75rem;
+    padding: 1rem 1.75rem; /* Bigger padding */
+    min-height: 60px; /* Larger buttons */
+    background: #f8f9fa;
+    color: #333;
     text-decoration: none;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    font-size: 0.9rem;
-    font-weight: 500;
+    border-radius: 12px; /* Slightly rounder */
+    border: 2px solid #e0e0e0;
+    font-size: 1.1rem; /* Bigger font */
+    font-weight: 600;
     transition: all 0.2s ease;
     white-space: nowrap;
   }
   .link-btn:hover,
   .link-btn:focus {
-    background: #f0f0f0; /* Light gray hover */
-    color: #000;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+    background: #007bff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,123,255,0.4);
   }
   .btn-icon {
-    font-size: 1.2rem;
-    width: 1.2em;
-    height: 1.2em;
-    color: #007bff; /* Blue icons for pop */
+    font-size: 1.5rem; /* Larger icons */
+    width: 1.5em;
+    height: 1.5em;
   }
   @media (max-width: 640px) {
     .links-container {
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
     .link-btn {
       width: 100%;
-      max-width: 280px;
+      max-width: 320px;
+      font-size: 1.2rem; /* Even bigger on mobile */
       justify-content: center;
     }
   }
